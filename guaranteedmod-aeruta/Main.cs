@@ -16,17 +16,11 @@ public static class Plugin {
 public class GuaranteedModification : BasePlugin {
     private new static ManualLogSource Log { get; set; } = null!;
     private static Harmony _harmony = null!;
-    
-    internal static ConfigEntry<float> ModificationChance { get; private set; } = null!;
 
     public override void Load() {
         Log = base.Log;
-        ModificationChance = Config.Bind("Main", "Modification Chance", 100.0f, "Set the chance (in percent) for modification to succeed.");
-        
         _harmony = new Harmony(Plugin.Guid);
         _harmony.PatchAll();
-
-        Log.LogInfo($"Modification chance set to {ModificationChance.Value}%");
         Log.LogInfo($"Plugin {Plugin.Guid} is loaded!");
     }
 }
