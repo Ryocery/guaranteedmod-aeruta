@@ -14,7 +14,7 @@ public static class Plugin {
 
 [BepInPlugin(Plugin.Guid, Plugin.Name, Plugin.Version)]
 public class GuaranteedModification : BasePlugin {
-    internal new static ManualLogSource Log { get; private set; } = null!;
+    private new static ManualLogSource Log { get; set; } = null!;
     private static Harmony _harmony = null!;
     
     internal static ConfigEntry<float> ModificationChance { get; private set; } = null!;
