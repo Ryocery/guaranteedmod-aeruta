@@ -1,10 +1,9 @@
 ﻿using BepInEx;
-using BepInEx.Configuration;
-using BepInEx.Unity.IL2CPP;
 using BepInEx.Logging;
+using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 
-namespace abundance_aeruta;
+namespace guaranteedmod_aeruta;
 
 public static class Plugin {
     public const string Guid = "com.ryocery.guaranteedmod_aeruta";
