@@ -5,22 +5,20 @@ using HarmonyLib;
 
 namespace guaranteedmod_aeruta;
 
-public static class Plugin {
-    public const string Guid = "com.ryocery.guaranteedmod_aeruta";
-    public const string Name = "Guaranteed Modification";
-    public const string Version = "1.0.0";
-}
-
-[BepInPlugin(Plugin.Guid, Plugin.Name, Plugin.Version)]
+[BepInPlugin(Guid, Name, Version)]
 public class GuaranteedModification : BasePlugin {
+    private const string Guid = "com.ryocery.guaranteedmod_aeruta";
+    private const string Name = "Guaranteed Modification";
+    private const string Version = "1.0.0";
+    
     private new static ManualLogSource Log { get; set; } = null!;
     private static Harmony _harmony = null!;
 
     public override void Load() {
         Log = base.Log;
-        _harmony = new Harmony(Plugin.Guid);
+        _harmony = new Harmony(Guid);
         _harmony.PatchAll();
-        Log.LogInfo($"Plugin {Plugin.Guid} is loaded!");
+        Log.LogInfo($"Plugin {Guid} is loaded!");
     }
 }
 
